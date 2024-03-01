@@ -1,0 +1,14 @@
+
+
+<app-item-form></app-item-form>
+
+<ul>
+
+  
+    <li *ngFor="let item of items; let i = index">
+      
+      {{ item.name }}
+      <button (click) ="deleteItem(i)">  Delete  </button>
+
+    </li>
+  </ul>
