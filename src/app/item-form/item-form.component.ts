@@ -39,7 +39,6 @@ export class ItemFormComponent {
   }
 
   constructor(private dataService: DataService) { 
-    console.log("selectedId",this.selectedId)
 
   }
 
@@ -61,7 +60,7 @@ export class ItemFormComponent {
   updateItem(): void {
     this.itemUpdated.emit(this.updateValue)
     this.isEditMode = false
-    this.updateValue = ""
+    // this.updateValue = ""
   }
 
 

@@ -1,0 +1,30 @@
+.parentForm{
+    display: flex;
+    gap: 0.5rem;
+    background-color: #81cf85;
+    padding: 29px;
+    border-radius: 15px;
+
+    .inputField {
+        width: 363px;
+        height: 30px;
+        border-radius: 8px;
+        padding: 8px;
+        border: none;
+        text-align: center;
+    }
+
+    .button {
+        background-color: #51ff8800;
+        /* border-radius: 10px; */
+        height: 36px;
+        color: white;
+        font-size: 14px;
+        width: 168px;
+        border: none;
+        border-bottom: 2px solid white;
+    }
+
+
+    
+}

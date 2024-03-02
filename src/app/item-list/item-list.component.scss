@@ -1,5 +1,72 @@
-.list-parent{
-    // display: flex;
-    padding: 20px;
-    color: rosybrown;
+.itemParent {
+    background-color: #4caf50d6;
+    padding: 48px;
+    width: 546px;
+    height: 274px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+
+
+
+    .singleItem {
+        color: white;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom-color: rebeccapurple;
+        border-bottom: 2px solid #00968887;
+        padding: 12px;
+        font-size: 22px;
+
+    }
+
+    .editButton {
+        background-color: #ffffff;
+        width: 75px;
+        height: 41px;
+        border-radius: 7px;
+        border-color: #00ff0a;
+        /* color: white; */
+        padding: 12px;
+        margin-right: 0.5rem;
+    }
+
+    .deleteButton {
+
+        background-color: #f44336d1;
+        width: 55px;
+        height: 41px;
+        border-radius: 4px;
+        border-color: white;
+        color: antiquewhite;
+
+    }
+
 }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 20px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+      
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
