@@ -14,11 +14,22 @@
 <main class="main">
   <div class="content">
     
-      I'm The App Component <h1>{{ title }}</h1>
+     <h1>{{ title }}</h1>
+      <!-- <app-item-list></app-item-list>
 
-        <!-- <app-item-form ></app-item-form> -->
+      <app-item-form></app-item-form> -->
+      <app-item-form
+       (itemUpdated)="recieveUpdated($event)"
+       [selectedId]="receivedId" 
+       >
+      </app-item-form>
+      <app-item-list 
+      [propName]="dynamicPropName" 
+      (messageEvent)="receiveMessage($event)"
+      (selectedIdEvent)="receiveId($event)"
+      >
+    </app-item-list>
 
-        <app-item-list></app-item-list>
 
   </div>
 </main>

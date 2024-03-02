@@ -1,14 +1,40 @@
+<!-- <div *ngIf="loader; else dataContent">
+  <p>Loading...</p>
+</div> -->
+
+<!-- <button (click)="sendMessage()">Send Message to Parent</button> -->
 
 
-<app-item-form></app-item-form>
+<!-- static data render  -->
+<ul class="itemParent">
+  <li  class="singleItem" *ngFor="let item of items" >
+  <div> 
+    <span> {{ item.name }} </span>
+  </div>
 
-<ul>
+  <div> 
+  <button class="editButton" (click)="selectedItem(item.id)"> edit </button>
+  <button class="deleteButton" [disabled]> Delete </button>
+    </div>
 
-  
-    <li *ngFor="let item of items; let i = index">
-      
-      {{ item.name }}
-      <button (click) ="deleteItem(i)">  Delete  </button>
 
-    </li>
-  </ul>
+</li>
+ 
+
+</ul>
+
+
+<ng-template #dataContent>
+  <!-- Data state -->
+
+<!-- data from api -->
+  <!-- <div *ngIf="comments">
+   hii {{propName}}
+    <ul>
+      <li *ngFor="let comment of comments">
+        {{ comment.name }}
+
+      </li>
+    </ul>
+  </div> -->
+</ng-template>

@@ -1,5 +1,29 @@
 <!-- item-form.component.html -->
-<input [(ngModel)]="inputValue" placeholder="New item" (input)="onInputChange($event)"/>
-<button (click)="addItem()">Add Item</button>
+
+
+
+
+<div class="parentForm">
+
+<input class="inputField" *ngIf="isEditMode" [(ngModel)]="updateValue" placeholder="update item" (input)="onInputChangeUpdate($event)" />
+<input  class="inputField" *ngIf="!isEditMode" [(ngModel)]="inputValue" placeholder="New item" (input)="onInputChange($event)" />
+
+
+
+
+
+
+<!-- <button (click)="addItem()" *ngIf="!isEditMode">Add Item</button>
+<button (click)="updateItem()" *ngIf="isEditMode">Update Item</button> -->
+
+<button class="button" (click)="isEditMode ? updateItem() : addItem()">
+    {{ isEditMode ? 'Update Item' : 'Add Item' }}
+  </button>
+</div>
 
 <!-- Add another input for additional value -->
+
+<!-- <form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="selectedItem.name" name="name">
+    <button type="submit">Add</button>
+  </form> -->
