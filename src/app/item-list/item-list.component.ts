@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { DataService, IUser } from '../data.service';
 import { CommonModule } from '@angular/common';
 import { ItemFormComponent } from '../item-form/item-form.component';
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './item-list.component.scss'
 })
 export class ItemListComponent {
-  items: any[];
+  @Input() items: any[] | undefined;
   comments: any[] | undefined;
   loader: boolean = false;
   count: number = 0;
@@ -24,24 +24,31 @@ export class ItemListComponent {
   @Output() selectedIdEvent = new EventEmitter<any>();
 
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private changeDetectorRef: ChangeDetectorRef) {
 
-    this.items = dataService.getItems();
+    // this.items = dataService.getItems();
   }
 
   ngOnInit(): void {
 
     this.loader = true
+    this.items = this.dataService.getItems();
+   
     this.dataService.getComments().subscribe(res => {
       this.comments = res
 
       setTimeout(() => {
         this.loader = false
-
-      }, 3000)
-
+       
+      }, 1000)
     });
 
+  }
+
+  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
+    if (this.items) { // Check for changes in 'items' input
+      this.changeDetectorRef.detectChanges(); // Trigger change detection if changed
+    }
   }
 
   sendMessage() {
