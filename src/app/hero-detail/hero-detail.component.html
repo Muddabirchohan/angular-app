@@ -1,0 +1,15 @@
+<app-item-form
+(itemUpdated)="recieveUpdated($event)"
+[selectedId]="receivedId" 
+>
+</app-item-form>
+<app-item-list 
+[propName]="dynamicPropName" 
+(messageEvent)="receiveMessage($event)"
+(selectedIdEvent)="receiveId($event)"
+>
+</app-item-list>
+
+<li><a routerLink="/landing" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Go To Landing
+</a></li>
