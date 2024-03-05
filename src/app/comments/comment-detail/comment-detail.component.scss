@@ -1,0 +1,15 @@
+.commentParent {
+    padding: 10px;
+
+    .summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: aquamarine;
+        width: 50rem;
+        height: 20rem;
+    }
+
+}
