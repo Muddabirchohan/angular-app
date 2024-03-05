@@ -5,8 +5,17 @@
 <!-- <button (click)="sendMessage()">Send Message to Parent</button> -->
 
 
+
+
+
 <!-- static data render  -->
 <ul class="itemParent">
+
+
+  <div *ngIf="items?.length == 0">
+    <p class="empty">All Items are cleared </p>
+  </div> 
+  
   <li  class="singleItem" *ngFor="let item of items" >
   <div> 
     <span> {{ item.name }} </span>
@@ -14,7 +23,7 @@
 
   <div> 
   <button class="editButton" (click)="selectedItem(item.id)"> edit </button>
-  <button class="deleteButton" [disabled]> Delete </button>
+  <button class="deleteButton"  (click)="deleteItem(item.id)" [disabled]> Delete </button>
     </div>
 
 

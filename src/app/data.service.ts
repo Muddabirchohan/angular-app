@@ -55,7 +55,24 @@ export class DataService {
 
   
 
-  deleteItem(index: number): any {
+  deleteItem(id: number): void {
+    // Find the index of the item to delete based on its ID
+    const index = this.items.findIndex(item => item.id === id);
+  
+    if (index === -1) {
+      console.error("Item with ID", id, "not found for deletion.");
+      return; // Early exit if item not found
+    }
+  
+    // Create a new array reference with the filtered contents
     this.items.splice(index, 1);
+  
+  
+    // Optionally (if needed):
+    // - Trigger change detection manually for better responsiveness
+    //   this.changeDetectorRef.detectChanges();
+  
+    // Inform the parent component about the deletion (optional)
+    // this.messageEvent.emit({ message: 'Item deleted successfully' });
   }
 }

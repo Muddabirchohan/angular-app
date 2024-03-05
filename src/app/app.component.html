@@ -7,17 +7,16 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
+<!-- <style>
 
 </style>
+
+
 
 <main class="main">
   <div class="content">
     
      <h1>{{ title }}</h1>
-      <!-- <app-item-list></app-item-list>
-
-      <app-item-form></app-item-form> -->
       <app-item-form
        (itemUpdated)="recieveUpdated($event)"
        [selectedId]="receivedId" 
@@ -31,6 +30,13 @@
     </app-item-list>
 
 
+  </div>
+</main> -->
+
+<main class="main">
+  <div class="content">
+    <!-- <h1>{{ title }}</h1> -->
+    <router-outlet></router-outlet>
   </div>
 </main>
 

@@ -20,34 +20,34 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class AppComponent {
-  title = '';
-  dynamicPropName: string = 'just a random prop'; // Set the initial value
-  receivedMessage: string = '';
-  updatedName: string = "";
-  receivedId: number = 0;
+  // title = '';
+  // dynamicPropName: string = 'just a random prop'; // Set the initial value
+  // receivedMessage: string = '';
+  // updatedName: string = "";
+  // receivedId: number = 0;
 
-  @Input() selectedId: string | undefined;
-
-
-  constructor(private dataService: DataService) {
-    // this.items = dataService.getItems();
-    // this.goto = dataService.goTo();
-  }
+  // @Input() selectedId: string | undefined;
 
 
+  // constructor(private dataService: DataService) {
+  //   // this.items = dataService.getItems();
+  //   // this.goto = dataService.goTo();
+  // }
 
-  receiveMessage(message: string) {
-    this.receivedMessage = message;
-  }
 
-  receiveId(message: number) {
-    this.receivedId = message;
-  }
 
-  recieveUpdated(message: string) {
-    this.updatedName = message;
-    this.dataService.updateItem({id: this.receivedId, name: message})
-  }
+  // receiveMessage(message: string) {
+  //   this.receivedMessage = message;
+  // }
+
+  // receiveId(message: number) {
+  //   this.receivedId = message;
+  // }
+
+  // recieveUpdated(message: string) {
+  //   this.updatedName = message;
+  //   this.dataService.updateItem({id: this.receivedId, name: message})
+  // }
 
 
 }
